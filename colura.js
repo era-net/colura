@@ -4,6 +4,8 @@ let btnName;
 let newIpt;
 let clrIpt;
 
+let titles = 0;
+
 function Colura() {
 
 	this.fontFamily = function(font = "A") {
@@ -65,15 +67,20 @@ function Colura() {
 
 
 	this.createTitle = function(txt, b = "m") {
+		titles++;
 		var title;
 
 		if (b === "m") {
 			title = document.createElement("h2");
-		} else if (b === "b") {
+		} else if (b === "l") {
 			title = document.createElement("h1");
 		} else if (b === "s") {
 			title = document.createElement("h3");
 		}
+
+		title.setAttribute("id", "title"+titles);
+		title.setAttribute("onclick", "getId(this.id);");
+		title.style.cursor = "pointer";
 
 		var text = document.createTextNode(txt);
 
