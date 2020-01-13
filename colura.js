@@ -1,5 +1,4 @@
 // some comment_1
-// some comment_2
 const body = document.getElementsByTagName("body")[0];
 let newBtn;
 let btnName;
